@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f513ad9a1f5caa84db8fd64e2f929f9b, type: 3}
+  m_Name: Nariz
+  m_EditorClassIdentifier: 
+  opciones:
+  - {fileID: 2800000, guid: 2cb05dc0effbca846a449180aa66fc16, type: 3}
+  - {fileID: 2800000, guid: 72693c6bd211de84da393794cbc9c550, type: 3}
