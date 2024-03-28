@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Cliente
 {
-    public int ojos;
-    public int nariz;
-    public Cliente(int _ojos, int _nariz)
+    public List<int> identidad;
+    public Cliente(List<int> _identidad)
     {
-        ojos = _ojos;
-        nariz = _nariz;
+        identidad = _identidad;
     }
 }

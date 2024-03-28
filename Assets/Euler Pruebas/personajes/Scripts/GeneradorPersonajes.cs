@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class GeneradorPersonajes : MonoBehaviour
 {
-    public Rasgo Nariz;
-    public Rasgo Ojos;
-
+    public List<Rasgo> rasgos;
     public GameObject puntoSpawn; // Transform que indica la posición donde aparecerá el objeto generado
 
     void Start()
@@ -16,21 +14,29 @@ public class GeneradorPersonajes : MonoBehaviour
 
     public void Generar()
     {
-        int ordenNariz = Random.Range(0, Nariz.opciones.Count);
-        int ordenOjos = Random.Range(0, Ojos.opciones.Count);
+        List<int> ordenRasgo = new List<int>();
+        foreach (Rasgo rasgo in rasgos)
+        {
+            ordenRasgo.Add(elegir(rasgo));
+        }
 
-        Cliente persona = new Cliente(ordenNariz, ordenOjos);
+        Cliente persona = new Cliente(ordenRasgo);
+    }
+    int elegir(Rasgo lista)
+    {
+        int random = Random.Range(0, lista.opciones.Count);
+        GameObject listaObjeto = puntoSpawn.transform.Find(lista.name).gameObject;
+        SpriteRenderer listaRender = listaObjeto.GetComponent<SpriteRenderer>();
 
-        // Obtener los GameObjects de nariz y ojos desde el punto de spawn
-        GameObject narizObjeto = puntoSpawn.transform.Find("Nariz").gameObject;
-        GameObject ojosObjeto = puntoSpawn.transform.Find("Ojos").gameObject;
+        // Crear el sprite
+        Sprite sprite = Sprite.Create(lista.opciones[random], new Rect(0, 0, lista.opciones[random].width, lista.opciones[random].height), Vector2.one);
+        listaRender.sprite = sprite;
 
-        // Obtener los componentes SpriteRenderer de nariz y ojos
-        SpriteRenderer narizRenderer = narizObjeto.GetComponent<SpriteRenderer>();
-        SpriteRenderer ojosRenderer = ojosObjeto.GetComponent<SpriteRenderer>();
+        // Centrar el sprite en el objeto vacío hijo
+        Vector3 spriteSize = sprite.bounds.size;
+        Vector3 offset = new Vector3(spriteSize.x / 2, spriteSize.y / 2, 0f); // Calcula el offset para centrar el sprite
+        listaObjeto.transform.position += offset; // Aplica el offset al objeto vacío hijo
 
-        // Asignar las texturas elegidas a los componentes SpriteRenderer
-        narizRenderer.sprite = Sprite.Create(Nariz.opciones[ordenNariz], new Rect(0, 0, Nariz.opciones[ordenNariz].width, Nariz.opciones[ordenNariz].height), Vector2.one * 0.0001f);
-        ojosRenderer.sprite = Sprite.Create(Ojos.opciones[ordenOjos], new Rect(0, 0, Ojos.opciones[ordenOjos].width, Ojos.opciones[ordenOjos].height), Vector2.one * 0.01f);
+        return random;
     }
 }
