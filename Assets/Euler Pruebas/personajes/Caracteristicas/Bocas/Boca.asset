@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f513ad9a1f5caa84db8fd64e2f929f9b, type: 3}
   m_Name: Boca
   m_EditorClassIdentifier: 
-  opciones: []
+  opciones:
+  - {fileID: 2800000, guid: 48ecc00062a27924ba06227f6a97e29c, type: 3}
+  - {fileID: 2800000, guid: cfc54f7e42b4dbe40912b6a45d8cd81c, type: 3}
+  - {fileID: 2800000, guid: 25d0aeed63066874ca74f8418a43e820, type: 3}
+  - {fileID: 2800000, guid: d64299649f4b65043b37c854701e7fe9, type: 3}
+  - {fileID: 2800000, guid: 39dc7a098ca44594a934c7af6a0ae7d8, type: 3}
+  - {fileID: 2800000, guid: 01e1f9cd1f6eee74cb4a2a2b70c6d041, type: 3}

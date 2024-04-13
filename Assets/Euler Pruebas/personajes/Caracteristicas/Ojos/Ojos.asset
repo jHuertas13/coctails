@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Ojos
   m_EditorClassIdentifier: 
   opciones:
-  - {fileID: 2800000, guid: a4abcd24c37f7c743a1c32a777bb8df4, type: 3}
-  - {fileID: 2800000, guid: d1e700628d9a7294bb7eb196273abff5, type: 3}
+  - {fileID: 2800000, guid: 96d73893215e91c44b6214a9434240dc, type: 3}
+  - {fileID: 2800000, guid: 9618b1214b9b3d540b2a4c77d84abfc7, type: 3}
+  - {fileID: 2800000, guid: f6bb346fb75aa004c84a6630ebcb96ec, type: 3}
+  - {fileID: 2800000, guid: 39fbee48891d6f049bbbce9716efe895, type: 3}
+  - {fileID: 2800000, guid: d8cf3fd30d657e54d8919ce2c6e9a4ae, type: 3}
